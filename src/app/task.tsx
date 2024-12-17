@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { TaskType } from './Types/task-type'
-import { Trash } from 'lucide-react'
+import { Trash2 } from 'lucide-react'
 
 interface Props {
     task: TaskType
@@ -12,7 +12,7 @@ export default function Task(props: Props) {
     return (
         <div
             key={props.task.id}
-            className="bg-green-300 rounded-lg p-2 flex justify-between items-center"
+            className="bg-zinc-700 rounded-lg p-2 flex justify-between items-center text-16 "
         >
             <div>
                 <h1>{props.task.title}</h1>
@@ -36,7 +36,7 @@ export default function Task(props: Props) {
                 </div>
             </div>
             <Button onClick={props.delete} >
-                <Trash />
+                <Trash2 />
             </Button>
         </div>
     )

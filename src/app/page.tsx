@@ -3,23 +3,10 @@
 import { useState } from 'react'
 import Task from './task'
 import { TaskType } from './Types/task-type'
+import Header from './header'
 
 const INIT_STATE: TaskType[] = [
-  // {
-  //   title: 'Buy cola',
-  //   didComplete: false,
-  //   id: 1,
-  // },
-  // {
-  //   title: 'Go to school',
-  //   didComplete: true,
-  //   id: 2,
-  // },
-  // {
-  //   title: 'Do homework',
-  //   didComplete: false,
-  //   id: 3,
-  // },
+ // Task List
 ]
 
 export default function Page() {
@@ -27,7 +14,7 @@ export default function Page() {
   const [tasks, setTasks] = useState(INIT_STATE)
 
   function addTask() {
-    if (value == " ") {
+    if (value == "") {
       alert("No Task in text box")
     }
     else {
@@ -49,21 +36,22 @@ export default function Page() {
 
   return (
     <div>
+      <Header />
       <br />
-      <h1 className="text-center">Task Manager</h1>
+      
 
       <br />
 
-      <div className="flex gap-3 justify-center">
+      <div className="flex gap-3 left ml-4 ">
         <input
           onChange={e => setValue(e.target.value)}
           value={value}
           type="text"
-          className="border border-pink-200 p-1.5 rounded-xl"
+          className="border border-pink-200 p-1.5 rounded-xl text-black  "
         />
         <button
           onClick={addTask}
-          className="bg-pink-500 p-1.5 rounded-lg"
+          className="bg-blue-600 p-2 rounded-lg"
         >
           Add
         </button>
